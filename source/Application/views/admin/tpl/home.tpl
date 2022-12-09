@@ -87,7 +87,7 @@
 <script type="text/javascript">
     <!--
     function _homeExpAct(mnid,sbid){
-        top.navigation.adminnav._navExtExpAct(mnid,sbid);
+        top.document.getElementById('navigation').contentWindow.adminnav._navExtExpAct(mnid,sbid);
     }
     //-->
     </script>
