@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OX>
+    <OXMENU id="NAVIGATION_ESHOPADMIN">
+        <MAINMENU id="ML_OXID6_MAINMENU">
+            <SUBMENU id="ML_OXID6_IFRAME" cl="ml_oxid6_iframe" />
+        </MAINMENU>
+    </OXMENU>
+</OX>

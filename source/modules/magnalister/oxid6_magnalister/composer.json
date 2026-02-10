@@ -10,6 +10,9 @@
     "magnalister/magento2_magnalisterlibrary": "*"
   },
   "autoload": {
+    "psr-4": {
+      "Magnalister\\Oxid6\\": ""
+    },
     "files": [
       "bootstrap.php"
     ]

@@ -10,13 +10,15 @@ It follows the structure of the Magento 2 magnalister module and prepares an OXI
 - OXID module metadata (`metadata.php`)
 - Module bootstrap that loads `magento2_magnalisterlibrary`
 - Initial OXID 6 shop adapter class (`ML_OXID6_Shop`)
+- OXID admin menu entry (`magnalister > Dashboard`) rendering the magnalister iframe
 
 ## Installation
 
 1. Place this module in `source/modules/magnalister/oxid6_magnalister`.
 2. Install/require `magnalister/magento2_magnalisterlibrary` into the project `vendor/` directory.
 3. Activate the module in the OXID admin.
-4. If your library path differs, set `ml_oxid6_library_path` in module settings.
+4. Open `magnalister > Dashboard` in admin to load the iframe integration.
+5. If needed, adjust `ml_oxid6_library_path` and `ml_oxid6_iframe_url` in module settings.
 
 
 ## How OXID6 Codepool is discovered
