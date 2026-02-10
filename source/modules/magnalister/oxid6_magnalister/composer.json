@@ -1,0 +1,22 @@
+{
+  "name": "magnalister/oxid6_magnalister",
+  "description": "magnalister bridge module for OXID eShop 6",
+  "type": "oxideshop-module",
+  "license": [
+    "proprietary"
+  ],
+  "require": {
+    "php": ">=7.4",
+    "magnalister/magento2_magnalisterlibrary": "*"
+  },
+  "autoload": {
+    "files": [
+      "bootstrap.php"
+    ]
+  },
+  "extra": {
+    "oxideshop": {
+      "target-directory": "magnalister/oxid6_magnalister"
+    }
+  }
+}
