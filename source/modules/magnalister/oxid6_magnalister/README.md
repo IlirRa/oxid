@@ -36,3 +36,9 @@ This way, when the library asks for OXID6 shop-specific classes/hooks, the files
 - Port remaining shop abstractions from `Codepool/70_Shop/Magento2` to `Codepool/70_Shop/OXID6`.
 - Map OXID order, product, customer, and stock services to magnalister models.
 - Add admin controller/routes for magnalister configuration and execution.
+
+
+## Troubleshooting
+
+If you still see `Call to undefined function oxNew()` during `composer install/update`, make sure your installed module version includes this fix (`>= 0.2.2`).
+The bootstrap no longer runs OXID Registry access before the runtime is initialized.

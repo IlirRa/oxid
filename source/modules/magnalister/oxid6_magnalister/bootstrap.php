@@ -45,11 +45,22 @@ final class Bootstrap
     {
         $default = 'vendor/redgecko/magnalisterlibrary';
 
-        if (!function_exists('oxNew') || !class_exists(Registry::class)) {
+        // Composer/plugin phase: OXID runtime is not initialized yet.
+        if (!function_exists('oxNew')) {
             return $default;
         }
 
-        $configuredPath = (string) Registry::getConfig()->getConfigParam('ml_oxid6_library_path');
+        // Do not trigger autoload side effects while probing runtime availability.
+        if (!class_exists(Registry::class, false) || !method_exists(Registry::class, 'getConfig')) {
+            return $default;
+        }
+
+        try {
+            $configuredPath = (string) Registry::getConfig()->getConfigParam('ml_oxid6_library_path');
+        } catch (\Throwable $exception) {
+            return $default;
+        }
+
         return $configuredPath !== '' ? $configuredPath : $default;
     }
 
