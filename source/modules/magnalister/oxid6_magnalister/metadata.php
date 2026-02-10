@@ -7,7 +7,7 @@ $aModule = [
     'title' => 'magnalister OXID 6 Bridge',
     'description' => 'Integration layer to run magnalister library on OXID eShop 6.',
     'thumbnail' => '',
-    'version' => '0.2.0',
+    'version' => '0.2.1',
     'author' => 'magnalister community',
     'url' => 'https://github.com/magnalister',
     'email' => 'support@magnalister.com',
@@ -23,7 +23,7 @@ $aModule = [
             'group' => 'main',
             'name' => 'ml_oxid6_library_path',
             'type' => 'str',
-            'value' => 'vendor/magnalister/magento2_magnalisterlibrary',
+            'value' => 'vendor/redgecko/magnalisterlibrary',
         ],
         [
             'group' => 'main',

@@ -17,6 +17,7 @@ class IframeController extends AdminController
     public function render()
     {
         parent::render();
+        \Magnalister\Oxid6\Bootstrap::loadMagnalisterLibrary();
 
         $config = Registry::getConfig();
         $iframeUrl = (string) $config->getConfigParam('ml_oxid6_iframe_url');

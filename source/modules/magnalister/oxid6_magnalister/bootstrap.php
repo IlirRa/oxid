@@ -15,15 +15,9 @@ final class Bootstrap
 
     public static function loadMagnalisterLibrary(): void
     {
-        $config = Registry::getConfig();
-        $configuredPath = (string) $config->getConfigParam('ml_oxid6_library_path');
-
-        if ($configuredPath === '') {
-            $configuredPath = 'vendor/magnalister/magento2_magnalisterlibrary';
-        }
-
         $shopRoot = dirname(__DIR__, 4);
         $moduleRoot = __DIR__;
+        $configuredPath = self::resolveLibraryPath();
         $libraryRoot = $shopRoot . DIRECTORY_SEPARATOR . trim($configuredPath, '/');
         $shopCodepoolRoot = $moduleRoot . '/Codepool/70_Shop/OXID6';
 
@@ -45,6 +39,18 @@ final class Bootstrap
         if (is_file($autoload)) {
             require_once $autoload;
         }
+    }
+
+    private static function resolveLibraryPath(): string
+    {
+        $default = 'vendor/redgecko/magnalisterlibrary';
+
+        if (!function_exists('oxNew') || !class_exists(Registry::class)) {
+            return $default;
+        }
+
+        $configuredPath = (string) Registry::getConfig()->getConfigParam('ml_oxid6_library_path');
+        return $configuredPath !== '' ? $configuredPath : $default;
     }
 
     private static function registerShopCodepool(string $shopCodepoolRoot): void
@@ -71,5 +77,3 @@ final class Bootstrap
         }, true, true);
     }
 }
-
-Bootstrap::loadMagnalisterLibrary();

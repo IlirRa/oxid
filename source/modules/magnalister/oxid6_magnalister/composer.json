@@ -7,15 +7,12 @@
   ],
   "require": {
     "php": ">=7.4",
-    "magnalister/magento2_magnalisterlibrary": "*"
+    "redgecko/magnalisterlibrary": "*"
   },
   "autoload": {
     "psr-4": {
       "Magnalister\\Oxid6\\": ""
-    },
-    "files": [
-      "bootstrap.php"
-    ]
+    }
   },
   "extra": {
     "oxideshop": {
